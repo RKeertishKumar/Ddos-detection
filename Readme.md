@@ -34,5 +34,9 @@ We run and test out the model.
 
 ## Output
 
+![image](https://github.com/RKeertishKumar/Ddos-detection/assets/141417594/cafa4397-88bc-475b-a703-835e6487517e)
+
+The accuracy is 77 percent with time taken to train the model being 38 seconds.
+
 
 
