@@ -1,0 +1,30 @@
+>python deepl.py
+2024-03-27 23:34:11.949570: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-03-27 23:34:14.196286: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+C:\Users\aster\sem6\Unisys\Federated-Threat-Detection\myenv\Lib\site-packages\keras\src\layers\core\dense.py:85: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+2024-03-27 23:34:25.586323: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Epoch 1/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 5s 953us/step - accuracy: 0.7248 - loss: 354002.2188 - val_accuracy: 0.7749 - val_loss: 1813.2428
+Epoch 2/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 4s 947us/step - accuracy: 0.7747 - loss: 12649.9307 - val_accuracy: 0.7740 - val_loss: 110.6702
+Epoch 3/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 4s 948us/step - accuracy: 0.7719 - loss: 2966.0991 - val_accuracy: 0.7741 - val_loss: 72.3631
+Epoch 4/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 4s 930us/step - accuracy: 0.7722 - loss: 1819.3864 - val_accuracy: 0.7741 - val_loss: 21.0359
+Epoch 5/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 4s 923us/step - accuracy: 0.7718 - loss: 964.3674 - val_accuracy: 0.7741 - val_loss: 11.8098
+Epoch 6/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 4s 938us/step - accuracy: 0.7733 - loss: 705.6992 - val_accuracy: 0.7741 - val_loss: 3.3605
+Epoch 7/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 4s 920us/step - accuracy: 0.7733 - loss: 212.2576 - val_accuracy: 0.7741 - val_loss: 3.3861
+Epoch 8/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 4s 926us/step - accuracy: 0.7734 - loss: 350.9524 - val_accuracy: 0.7741 - val_loss: 2.7610
+Epoch 9/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 4s 919us/step - accuracy: 0.7725 - loss: 146.6867 - val_accuracy: 0.7744 - val_loss: 0.7923
+Epoch 10/10
+4045/4045 ━━━━━━━━━━━━━━━━━━━━ 4s 922us/step - accuracy: 0.7731 - loss: 1197.4490 - val_accuracy: 0.7744 - val_loss: 0.5313
+Training time: 38.90917921066284 seconds
+2697/2697 ━━━━━━━━━━━━━━━━━━━━ 1s 522us/step - accuracy: 0.7728 - loss: 2.5715
+Test Loss: 1.2242417335510254, Test Accuracy: 0.7733526229858398
