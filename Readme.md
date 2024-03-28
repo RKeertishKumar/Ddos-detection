@@ -8,7 +8,9 @@ Project employs deep learning on DDoS datasets for predictive models, enhancing 
 
 Took the dataset from
 
-https://www.unb.ca/cic/datasets/ddos-2019.html
+https://data.mendeley.com/datasets/ssnc74xm6r/1
+
+Download the dataset and add it in the folder before running the below python files.
 
 ## Spliting dataset into 3 parts
 
