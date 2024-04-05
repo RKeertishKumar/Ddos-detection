@@ -4,6 +4,9 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import Adam
 import time
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, classification_report
 
 # Load preprocessed datasets
 X_train = np.loadtxt('X_train_preprocessed.csv', delimiter=',', skiprows=1)
@@ -34,6 +37,51 @@ end_time = time.time()
 training_time = end_time - start_time
 print(f"Training time: {training_time} seconds")
 
-# Evaluate the model on test data
-test_loss, test_accuracy = model.evaluate(X_test, y_test)
-print(f'Test Loss: {test_loss}, Test Accuracy: {test_accuracy}')
+# Predictions
+y_train_prob = model.predict(X_train)
+y_val_prob = model.predict(X_val)
+y_test_prob = model.predict(X_test)
+
+# Convert probabilities to class labels
+y_train_pred = (y_train_prob > 0.5).astype(int)
+y_val_pred = (y_val_prob > 0.5).astype(int)
+y_test_pred = (y_test_prob > 0.5).astype(int)
+
+# Generate classification report
+report = classification_report(y_test, y_test_pred, target_names=['Normal', 'DDoS'])
+
+# Print classification report
+print("Classification Report for Test Data:")
+print(report)
+
+# Compute confusion matrices
+train_cm = confusion_matrix(y_train, y_train_pred)
+val_cm = confusion_matrix(y_val, y_val_pred)
+test_cm = confusion_matrix(y_test, y_test_pred)
+
+# Define labels
+labels = ['Normal', 'DDoS']
+
+# Plot confusion matrix
+plt.figure(figsize=(15, 5))
+
+plt.subplot(1, 3, 1)
+sns.heatmap(train_cm, annot=True, cmap='Blues', fmt='g', xticklabels=labels, yticklabels=labels)
+plt.title('Training Confusion Matrix')
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+
+plt.subplot(1, 3, 2)
+sns.heatmap(val_cm, annot=True, cmap='Oranges', fmt='g', xticklabels=labels, yticklabels=labels)
+plt.title('Validation Confusion Matrix')
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+
+plt.subplot(1, 3, 3)
+sns.heatmap(test_cm, annot=True, cmap='Greens', fmt='g', xticklabels=labels, yticklabels=labels)
+plt.title('Test Confusion Matrix')
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+
+plt.tight_layout()
+plt.show()
